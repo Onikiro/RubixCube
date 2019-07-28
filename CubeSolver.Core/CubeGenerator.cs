@@ -11,24 +11,9 @@
             {
                 
             }
-            while (cubeIsSolved) ;
+            while (!cubeIsSolved) ;
 
             return cube;
-        }
-
-        public static bool IsSideSolved(Side side, Color color)
-        {
-            var isSolved = true;
-            foreach (Color el in side)
-            {
-                if (el != color)
-                {
-                    isSolved = false;
-                    break;
-                }
-            }
-
-            return isSolved;
         }
     }
 }
