@@ -19,19 +19,19 @@ namespace RubixCubes.Tests
             cube.Rotate(Turn.Back, false, 1);
             cube.Rotate(Turn.Right, false, 1);
             cube.Rotate(Turn.Left, false, 1);
-            cube.Rotate(Turn.Up, true, 1);
+            cube.Rotate(Turn.Up);
             cube.Rotate(Turn.Down, false, 1);
             cube.Rotate(Turn.Back, true, 2);
             cube.Rotate(Turn.Front, false, 1);
             cube.Rotate(Turn.Right, false, 1);
             cube.Rotate(Turn.Down, false, 1);
             cube.Rotate(Turn.Back, false, 1);
-            cube.Rotate(Turn.Front, true, 1);
-            cube.Rotate(Turn.Up, true, 1);
+            cube.Rotate(Turn.Front);
+            cube.Rotate(Turn.Up);
             cube.Rotate(Turn.Right, false, 1);
             cube.Rotate(Turn.Down, true, 2);
             cube.Rotate(Turn.Back, false, 1);
-            cube.Rotate(Turn.Down, true, 1);
+            cube.Rotate(Turn.Down);
 
             cube.Blue[0, 0].Should().Be(Color.Orange);
             cube.Blue[0, 1].Should().Be(Color.Yellow);

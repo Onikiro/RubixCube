@@ -14,7 +14,7 @@ namespace RubixCubes.Core
 
         public bool IsSolved => Green.IsSolved && Red.IsSolved && White.IsSolved && Blue.IsSolved && Yellow.IsSolved && Orange.IsSolved;
 
-        public void Rotate(Turn turn, bool clockwise, int count)
+        public void Rotate(Turn turn, bool clockwise = true, int count = 1)
         {
             for (int i = 0; i < count; i++)
             {
