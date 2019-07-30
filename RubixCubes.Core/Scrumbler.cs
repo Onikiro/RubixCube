@@ -1,17 +1,17 @@
 ﻿namespace RubixCubes.Core
 {
-    public static class CubeGenerator
+    public static class Scrumbler
     {
-        public static Cube GenerateRandomUnsolvedCube()
+        public static Cube ScrumbleCube()
         {
             var cube = new Cube();
             var cubeIsSolved = true;
 
             do
             {
-                
+
             }
-            while (!cubeIsSolved) ;
+            while (!cubeIsSolved);
 
             return cube;
         }

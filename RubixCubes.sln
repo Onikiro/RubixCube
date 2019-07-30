@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubixCubes.Core", "RubixCub
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubixCubes", "RubixCubes\RubixCubes.csproj", "{8C904A55-876A-4398-ACAF-921C3FF3367C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubixCubes.Console", "RubixCubes.Console\RubixCubes.Console.csproj", "{89D0ADCD-82F7-4746-9998-B574316B9ABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8C904A55-876A-4398-ACAF-921C3FF3367C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C904A55-876A-4398-ACAF-921C3FF3367C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C904A55-876A-4398-ACAF-921C3FF3367C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D0ADCD-82F7-4746-9998-B574316B9ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D0ADCD-82F7-4746-9998-B574316B9ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D0ADCD-82F7-4746-9998-B574316B9ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D0ADCD-82F7-4746-9998-B574316B9ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

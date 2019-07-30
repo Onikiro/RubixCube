@@ -21,19 +21,6 @@ namespace RubixCubes.Tests
         }
 
         [Fact]
-        public void CubeGenerator_ShouldReturnUnsolvedCube()
-        {
-            var unsolvedCube = CubeGenerator.GenerateRandomUnsolvedCube();
-
-            unsolvedCube.Orange.IsSolved.Should().Be(false);
-            unsolvedCube.Green.IsSolved.Should().Be(false);
-            unsolvedCube.Yellow.IsSolved.Should().Be(false);
-            unsolvedCube.White.IsSolved.Should().Be(false);
-            unsolvedCube.Blue.IsSolved.Should().Be(false);
-            unsolvedCube.Red.IsSolved.Should().Be(false);
-        }
-
-        [Fact]
         public void SolvedCube_ShouldReturnCorrectRotateLeftClockwise()
         {
             var cube = new Cube();
@@ -112,21 +99,21 @@ namespace RubixCubes.Tests
 
             cube.Rotate(Turn.Right, false, 1);
 
-            cube.Red[0, 2].Should().Be(Color.White);
-            cube.Red[1, 2].Should().Be(Color.White);
-            cube.Red[2, 2].Should().Be(Color.White);
+            cube.Red[0, 2].Should().Be(Color.Yellow);
+            cube.Red[1, 2].Should().Be(Color.Yellow);
+            cube.Red[2, 2].Should().Be(Color.Yellow);
 
-            cube.Yellow[0, 2].Should().Be(Color.Red);
-            cube.Yellow[1, 2].Should().Be(Color.Red);
-            cube.Yellow[2, 2].Should().Be(Color.Red);
+            cube.White[0, 2].Should().Be(Color.Red);
+            cube.White[1, 2].Should().Be(Color.Red);
+            cube.White[2, 2].Should().Be(Color.Red);
 
-            cube.Orange[0, 0].Should().Be(Color.Yellow);
-            cube.Orange[1, 0].Should().Be(Color.Yellow);
-            cube.Orange[2, 0].Should().Be(Color.Yellow);
+            cube.Orange[0, 0].Should().Be(Color.White);
+            cube.Orange[1, 0].Should().Be(Color.White);
+            cube.Orange[2, 0].Should().Be(Color.White);
 
-            cube.White[0, 2].Should().Be(Color.Orange);
-            cube.White[1, 2].Should().Be(Color.Orange);
-            cube.White[2, 2].Should().Be(Color.Orange);
+            cube.Yellow[0, 2].Should().Be(Color.Orange);
+            cube.Yellow[1, 2].Should().Be(Color.Orange);
+            cube.Yellow[2, 2].Should().Be(Color.Orange);
         }
 
         [Fact]
@@ -208,21 +195,21 @@ namespace RubixCubes.Tests
 
             cube.Rotate(Turn.Down, false, 1);
 
-            cube.Red[2, 0].Should().Be(Color.Blue);
-            cube.Red[2, 1].Should().Be(Color.Blue);
-            cube.Red[2, 2].Should().Be(Color.Blue);
+            cube.Red[2, 0].Should().Be(Color.Green);
+            cube.Red[2, 1].Should().Be(Color.Green);
+            cube.Red[2, 2].Should().Be(Color.Green);
 
-            cube.Green[2, 0].Should().Be(Color.Red);
-            cube.Green[2, 1].Should().Be(Color.Red);
-            cube.Green[2, 2].Should().Be(Color.Red);
+            cube.Blue[2, 0].Should().Be(Color.Red);
+            cube.Blue[2, 1].Should().Be(Color.Red);
+            cube.Blue[2, 2].Should().Be(Color.Red);
 
-            cube.Orange[2, 0].Should().Be(Color.Green);
-            cube.Orange[2, 1].Should().Be(Color.Green);
-            cube.Orange[2, 2].Should().Be(Color.Green);
+            cube.Orange[2, 0].Should().Be(Color.Blue);
+            cube.Orange[2, 1].Should().Be(Color.Blue);
+            cube.Orange[2, 2].Should().Be(Color.Blue);
 
-            cube.Blue[2, 0].Should().Be(Color.Orange);
-            cube.Blue[2, 1].Should().Be(Color.Orange);
-            cube.Blue[2, 2].Should().Be(Color.Orange);
+            cube.Green[2, 0].Should().Be(Color.Orange);
+            cube.Green[2, 1].Should().Be(Color.Orange);
+            cube.Green[2, 2].Should().Be(Color.Orange);
         }
 
         [Fact]
@@ -232,21 +219,21 @@ namespace RubixCubes.Tests
 
             cube.Rotate(Turn.Front, true, 2);
 
-            cube.Red[0, 0].Should().Be(Color.Orange);
-            cube.Red[1, 0].Should().Be(Color.Orange);
-            cube.Red[2, 0].Should().Be(Color.Orange);
-
-            cube.Yellow[0, 0].Should().Be(Color.White);
-            cube.Yellow[1, 0].Should().Be(Color.White);
             cube.Yellow[2, 0].Should().Be(Color.White);
+            cube.Yellow[2, 1].Should().Be(Color.White);
+            cube.Yellow[2, 2].Should().Be(Color.White);
 
-            cube.Orange[0, 2].Should().Be(Color.Red);
-            cube.Orange[1, 2].Should().Be(Color.Red);
-            cube.Orange[2, 2].Should().Be(Color.Red);
+            cube.Green[0, 0].Should().Be(Color.Blue);
+            cube.Green[1, 0].Should().Be(Color.Blue);
+            cube.Green[2, 0].Should().Be(Color.Blue);
 
             cube.White[0, 0].Should().Be(Color.Yellow);
-            cube.White[1, 0].Should().Be(Color.Yellow);
-            cube.White[2, 0].Should().Be(Color.Yellow);
+            cube.White[0, 1].Should().Be(Color.Yellow);
+            cube.White[0, 2].Should().Be(Color.Yellow);
+
+            cube.Blue[0, 2].Should().Be(Color.Green);
+            cube.Blue[1, 2].Should().Be(Color.Green);
+            cube.Blue[2, 2].Should().Be(Color.Green);
         }
 
         [Fact]
@@ -256,21 +243,21 @@ namespace RubixCubes.Tests
 
             cube.Rotate(Turn.Front, false, 1);
 
-            cube.Red[0, 0].Should().Be(Color.White);
-            cube.Red[1, 0].Should().Be(Color.White);
-            cube.Red[2, 0].Should().Be(Color.White);
+            cube.Yellow[2, 0].Should().Be(Color.Green);
+            cube.Yellow[2, 1].Should().Be(Color.Green);
+            cube.Yellow[2, 2].Should().Be(Color.Green);
 
-            cube.Yellow[0, 0].Should().Be(Color.Red);
-            cube.Yellow[1, 0].Should().Be(Color.Red);
-            cube.Yellow[2, 0].Should().Be(Color.Red);
+            cube.Green[0, 0].Should().Be(Color.White);
+            cube.Green[1, 0].Should().Be(Color.White);
+            cube.Green[2, 0].Should().Be(Color.White);
 
-            cube.Orange[0, 2].Should().Be(Color.Yellow);
-            cube.Orange[1, 2].Should().Be(Color.Yellow);
-            cube.Orange[2, 2].Should().Be(Color.Yellow);
+            cube.White[0, 0].Should().Be(Color.Blue);
+            cube.White[0, 1].Should().Be(Color.Blue);
+            cube.White[0, 2].Should().Be(Color.Blue);
 
-            cube.White[0, 0].Should().Be(Color.Orange);
-            cube.White[1, 0].Should().Be(Color.Orange);
-            cube.White[2, 0].Should().Be(Color.Orange);
+            cube.Blue[0, 2].Should().Be(Color.Yellow);
+            cube.Blue[1, 2].Should().Be(Color.Yellow);
+            cube.Blue[2, 2].Should().Be(Color.Yellow);
         }
 
         [Fact]
@@ -280,21 +267,21 @@ namespace RubixCubes.Tests
 
             cube.Rotate(Turn.Back, true, 2);
 
-            cube.Red[0, 0].Should().Be(Color.Orange);
-            cube.Red[1, 0].Should().Be(Color.Orange);
-            cube.Red[2, 0].Should().Be(Color.Orange);
-
+            cube.Yellow[0, 2].Should().Be(Color.White);
+            cube.Yellow[0, 1].Should().Be(Color.White);
             cube.Yellow[0, 0].Should().Be(Color.White);
-            cube.Yellow[1, 0].Should().Be(Color.White);
-            cube.Yellow[2, 0].Should().Be(Color.White);
 
-            cube.Orange[0, 2].Should().Be(Color.Red);
-            cube.Orange[1, 2].Should().Be(Color.Red);
-            cube.Orange[2, 2].Should().Be(Color.Red);
+            cube.Green[2, 2].Should().Be(Color.Blue);
+            cube.Green[1, 2].Should().Be(Color.Blue);
+            cube.Green[0, 2].Should().Be(Color.Blue);
 
-            cube.White[0, 0].Should().Be(Color.Yellow);
-            cube.White[1, 0].Should().Be(Color.Yellow);
+            cube.White[2, 2].Should().Be(Color.Yellow);
+            cube.White[2, 1].Should().Be(Color.Yellow);
             cube.White[2, 0].Should().Be(Color.Yellow);
+
+            cube.Blue[2, 0].Should().Be(Color.Green);
+            cube.Blue[1, 0].Should().Be(Color.Green);
+            cube.Blue[0, 0].Should().Be(Color.Green);
         }
 
         [Fact]
@@ -304,21 +291,21 @@ namespace RubixCubes.Tests
 
             cube.Rotate(Turn.Back, false, 1);
 
-            cube.Red[0, 0].Should().Be(Color.White);
-            cube.Red[1, 0].Should().Be(Color.White);
-            cube.Red[2, 0].Should().Be(Color.White);
+            cube.Yellow[0, 2].Should().Be(Color.Blue);
+            cube.Yellow[0, 1].Should().Be(Color.Blue);
+            cube.Yellow[0, 0].Should().Be(Color.Blue);
 
-            cube.Yellow[0, 0].Should().Be(Color.Red);
-            cube.Yellow[1, 0].Should().Be(Color.Red);
-            cube.Yellow[2, 0].Should().Be(Color.Red);
+            cube.Blue[0, 0].Should().Be(Color.White);
+            cube.Blue[1, 0].Should().Be(Color.White);
+            cube.Blue[2, 0].Should().Be(Color.White);
 
-            cube.Orange[0, 2].Should().Be(Color.Yellow);
-            cube.Orange[1, 2].Should().Be(Color.Yellow);
-            cube.Orange[2, 2].Should().Be(Color.Yellow);
+            cube.White[2, 2].Should().Be(Color.Green);
+            cube.White[2, 1].Should().Be(Color.Green);
+            cube.White[2, 0].Should().Be(Color.Green);
 
-            cube.White[0, 0].Should().Be(Color.Orange);
-            cube.White[1, 0].Should().Be(Color.Orange);
-            cube.White[2, 0].Should().Be(Color.Orange);
+            cube.Green[0, 2].Should().Be(Color.Yellow);
+            cube.Green[1, 2].Should().Be(Color.Yellow);
+            cube.Green[2, 2].Should().Be(Color.Yellow);
         }
     }
 }

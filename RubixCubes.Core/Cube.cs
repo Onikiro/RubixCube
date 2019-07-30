@@ -34,46 +34,17 @@ namespace RubixCubes.Core
                             White[1, 0] = redCopy[1, 0];
                             White[2, 0] = redCopy[2, 0];
 
-                            Orange[0, 2] = whiteCopy[0, 0];
+                            Orange[2, 2] = whiteCopy[0, 0];
                             Orange[1, 2] = whiteCopy[1, 0];
-                            Orange[2, 2] = whiteCopy[2, 0];
+                            Orange[0, 2] = whiteCopy[2, 0];
 
-                            Yellow[0, 0] = orangeCopy[0, 2];
+                            Yellow[0, 0] = orangeCopy[2, 2];
                             Yellow[1, 0] = orangeCopy[1, 2];
-                            Yellow[2, 0] = orangeCopy[2, 2];
+                            Yellow[2, 0] = orangeCopy[0, 2];
 
                             Red[0, 0] = yellowCopy[0, 0];
                             Red[1, 0] = yellowCopy[1, 0];
                             Red[2, 0] = yellowCopy[2, 0];
-
-                            Blue[0, 0] = blueCopy[0, 2];
-                            Blue[0, 1] = blueCopy[1, 2];
-                            Blue[0, 2] = blueCopy[2, 2];
-
-                            Blue[1, 2] = blueCopy[2, 1];
-                            Blue[2, 2] = blueCopy[2, 0];
-
-                            Blue[2, 1] = blueCopy[1, 0];
-                            Blue[2, 0] = blueCopy[0, 0];
-                            Blue[1, 0] = blueCopy[0, 1];
-                        }
-                        else
-                        {
-                            Yellow[0, 0] = redCopy[0, 0];
-                            Yellow[1, 0] = redCopy[1, 0];
-                            Yellow[2, 0] = redCopy[2, 0];
-
-                            Orange[0, 2] = yellowCopy[0, 0];
-                            Orange[1, 2] = yellowCopy[1, 0];
-                            Orange[2, 2] = yellowCopy[2, 0];
-
-                            White[0, 0] = orangeCopy[0, 2];
-                            White[1, 0] = orangeCopy[1, 2];
-                            White[2, 0] = orangeCopy[2, 2];
-
-                            Red[0, 0] = whiteCopy[0, 0];
-                            Red[1, 0] = whiteCopy[1, 0];
-                            Red[2, 0] = whiteCopy[2, 0];
 
                             Blue[0, 0] = blueCopy[2, 0];
                             Blue[1, 0] = blueCopy[2, 1];
@@ -86,52 +57,52 @@ namespace RubixCubes.Core
                             Blue[0, 2] = blueCopy[0, 0];
                             Blue[0, 1] = blueCopy[1, 0];
                         }
+                        else
+                        {
+                            Yellow[0, 0] = redCopy[0, 0];
+                            Yellow[1, 0] = redCopy[1, 0];
+                            Yellow[2, 0] = redCopy[2, 0];
+
+                            Orange[0, 2] = yellowCopy[2, 0];
+                            Orange[1, 2] = yellowCopy[1, 0];
+                            Orange[2, 2] = yellowCopy[0, 0];
+
+                            White[2, 0] = orangeCopy[0, 2];
+                            White[1, 0] = orangeCopy[1, 2];
+                            White[0, 0] = orangeCopy[2, 2];
+
+                            Red[0, 0] = whiteCopy[0, 0];
+                            Red[1, 0] = whiteCopy[1, 0];
+                            Red[2, 0] = whiteCopy[2, 0];
+
+                            Blue[0, 0] = blueCopy[0, 2];
+                            Blue[0, 1] = blueCopy[1, 2];
+                            Blue[0, 2] = blueCopy[2, 2];
+
+                            Blue[1, 2] = blueCopy[2, 1];
+                            Blue[2, 2] = blueCopy[2, 0];
+
+                            Blue[2, 1] = blueCopy[1, 0];
+                            Blue[2, 0] = blueCopy[0, 0];
+                            Blue[1, 0] = blueCopy[0, 1];
+                        }
 
                         break;
 
                     case Turn.Right:
                         if (clockwise)
                         {
-                            White[0, 2] = redCopy[0, 2];
-                            White[1, 2] = redCopy[1, 2];
-                            White[2, 2] = redCopy[2, 2];
-
-                            Orange[0, 0] = whiteCopy[0, 2];
-                            Orange[1, 0] = whiteCopy[1, 2];
-                            Orange[2, 0] = whiteCopy[2, 2];
-
-                            Yellow[0, 2] = orangeCopy[0, 0];
-                            Yellow[1, 2] = orangeCopy[1, 0];
-                            Yellow[2, 2] = orangeCopy[2, 0];
-
-                            Red[0, 2] = yellowCopy[0, 2];
-                            Red[1, 2] = yellowCopy[1, 2];
-                            Red[2, 2] = yellowCopy[2, 2];
-
-                            Green[0, 0] = greenCopy[0, 2];
-                            Green[0, 1] = greenCopy[1, 2];
-                            Green[0, 2] = greenCopy[2, 2];
-
-                            Green[1, 2] = greenCopy[2, 1];
-                            Green[2, 2] = greenCopy[2, 0];
-
-                            Green[2, 1] = greenCopy[1, 0];
-                            Green[2, 0] = greenCopy[0, 0];
-                            Green[1, 0] = greenCopy[0, 1];
-                        }
-                        else
-                        {
                             Yellow[0, 2] = redCopy[0, 2];
                             Yellow[1, 2] = redCopy[1, 2];
                             Yellow[2, 2] = redCopy[2, 2];
 
-                            Orange[0, 0] = yellowCopy[0, 2];
+                            Orange[2, 0] = yellowCopy[0, 2];
                             Orange[1, 0] = yellowCopy[1, 2];
-                            Orange[2, 0] = yellowCopy[2, 2];
+                            Orange[0, 0] = yellowCopy[2, 2];
 
-                            White[0, 2] = orangeCopy[0, 0];
+                            White[0, 2] = orangeCopy[2, 0];
                             White[1, 2] = orangeCopy[1, 0];
-                            White[2, 2] = orangeCopy[2, 0];
+                            White[2, 2] = orangeCopy[0, 0];
 
                             Red[0, 2] = whiteCopy[0, 2];
                             Red[1, 2] = whiteCopy[1, 2];
@@ -147,6 +118,35 @@ namespace RubixCubes.Core
                             Green[1, 2] = greenCopy[0, 1];
                             Green[0, 2] = greenCopy[0, 0];
                             Green[0, 1] = greenCopy[1, 0];
+                        }
+                        else
+                        {
+                            White[0, 2] = redCopy[0, 2];
+                            White[1, 2] = redCopy[1, 2];
+                            White[2, 2] = redCopy[2, 2];
+
+                            Orange[0, 0] = whiteCopy[2, 2];
+                            Orange[1, 0] = whiteCopy[1, 2];
+                            Orange[2, 0] = whiteCopy[0, 2];
+
+                            Yellow[0, 2] = orangeCopy[2, 0];
+                            Yellow[1, 2] = orangeCopy[1, 0];
+                            Yellow[2, 2] = orangeCopy[0, 0];
+
+                            Red[0, 2] = yellowCopy[0, 2];
+                            Red[1, 2] = yellowCopy[1, 2];
+                            Red[2, 2] = yellowCopy[2, 2];
+
+                            Green[0, 0] = greenCopy[0, 2];
+                            Green[0, 1] = greenCopy[1, 2];
+                            Green[0, 2] = greenCopy[2, 2];
+
+                            Green[1, 2] = greenCopy[2, 1];
+                            Green[2, 2] = greenCopy[2, 0];
+
+                            Green[2, 1] = greenCopy[1, 0];
+                            Green[2, 0] = greenCopy[0, 0];
+                            Green[1, 0] = greenCopy[0, 1];
                         }
 
                         break;
@@ -167,19 +167,19 @@ namespace RubixCubes.Core
                             Green[0, 2] = orangeCopy[0, 2];
 
                             Red[0, 0] = greenCopy[0, 0];
-                            Red[0, 1] = greenCopy[0, 0];
-                            Red[0, 2] = greenCopy[0, 0];
+                            Red[0, 1] = greenCopy[0, 1];
+                            Red[0, 2] = greenCopy[0, 2];
 
-                            Yellow[0, 0] = yellowCopy[0, 2];
-                            Yellow[0, 1] = yellowCopy[1, 2];
-                            Yellow[0, 2] = yellowCopy[2, 2];
+                            Yellow[0, 0] = yellowCopy[2, 0];
+                            Yellow[1, 0] = yellowCopy[2, 1];
+                            Yellow[2, 0] = yellowCopy[2, 2];
 
-                            Yellow[1, 2] = yellowCopy[2, 1];
-                            Yellow[2, 2] = yellowCopy[2, 0];
+                            Yellow[2, 1] = yellowCopy[1, 2];
+                            Yellow[2, 2] = yellowCopy[0, 2];
 
-                            Yellow[2, 1] = yellowCopy[1, 0];
-                            Yellow[2, 0] = yellowCopy[0, 0];
-                            Yellow[1, 0] = yellowCopy[0, 1];
+                            Yellow[1, 2] = yellowCopy[0, 1];
+                            Yellow[0, 2] = yellowCopy[0, 0];
+                            Yellow[0, 1] = yellowCopy[1, 0];
                         }
                         else
                         {
@@ -199,16 +199,16 @@ namespace RubixCubes.Core
                             Orange[0, 1] = greenCopy[0, 1];
                             Orange[0, 2] = greenCopy[0, 2];
 
-                            Yellow[0, 0] = yellowCopy[2, 0];
-                            Yellow[1, 0] = yellowCopy[2, 1];
-                            Yellow[2, 0] = yellowCopy[2, 2];
+                            Yellow[0, 0] = yellowCopy[0, 2];
+                            Yellow[0, 1] = yellowCopy[1, 2];
+                            Yellow[0, 2] = yellowCopy[2, 2];
 
-                            Yellow[2, 1] = yellowCopy[1, 2];
-                            Yellow[2, 2] = yellowCopy[0, 2];
+                            Yellow[1, 2] = yellowCopy[2, 1];
+                            Yellow[2, 2] = yellowCopy[2, 0];
 
-                            Yellow[1, 2] = yellowCopy[0, 1];
-                            Yellow[0, 2] = yellowCopy[0, 0];
-                            Yellow[0, 1] = yellowCopy[1, 0];
+                            Yellow[2, 1] = yellowCopy[1, 0];
+                            Yellow[2, 0] = yellowCopy[0, 0];
+                            Yellow[1, 0] = yellowCopy[0, 1];
                         }
 
                         break;
@@ -216,39 +216,61 @@ namespace RubixCubes.Core
                     case Turn.Down:
                         if (clockwise)
                         {
-                            Blue[2, 0] = Color.Red;
-                            Blue[2, 1] = Color.Red;
-                            Blue[2, 2] = Color.Red;
+                            Blue[2, 0] = orangeCopy[2, 0];
+                            Blue[2, 1] = orangeCopy[2, 1];
+                            Blue[2, 2] = orangeCopy[2, 2];
 
-                            Orange[2, 0] = Color.Blue;
-                            Orange[2, 1] = Color.Blue;
-                            Orange[2, 2] = Color.Blue;
+                            Red[2, 0] = blueCopy[2, 0];
+                            Red[2, 1] = blueCopy[2, 1];
+                            Red[2, 2] = blueCopy[2, 2];
 
-                            Green[2, 0] = Color.Orange;
-                            Green[2, 1] = Color.Orange;
-                            Green[2, 2] = Color.Orange;
+                            Green[2, 0] = redCopy[2, 0];
+                            Green[2, 1] = redCopy[2, 1];
+                            Green[2, 2] = redCopy[2, 2];
 
-                            Red[2, 0] = Color.Green;
-                            Red[2, 1] = Color.Green;
-                            Red[2, 2] = Color.Green;
+                            Orange[2, 0] = greenCopy[2, 0];
+                            Orange[2, 1] = greenCopy[2, 1];
+                            Orange[2, 2] = greenCopy[2, 2];
+
+                            White[0, 0] = whiteCopy[2, 0];
+                            White[1, 0] = whiteCopy[2, 1];
+                            White[2, 0] = whiteCopy[2, 2];
+
+                            White[2, 1] = whiteCopy[1, 2];
+                            White[2, 2] = whiteCopy[0, 2];
+
+                            White[1, 2] = whiteCopy[0, 1];
+                            White[0, 2] = whiteCopy[0, 0];
+                            White[0, 1] = whiteCopy[1, 0];
                         }
                         else
                         {
-                            Blue[2, 0] = Color.Orange;
-                            Blue[2, 1] = Color.Orange;
-                            Blue[2, 2] = Color.Orange;
+                            Blue[2, 0] = redCopy[2, 0];
+                            Blue[2, 1] = redCopy[2, 1];
+                            Blue[2, 2] = redCopy[2, 2];
 
-                            Red[2, 0] = Color.Blue;
-                            Red[2, 1] = Color.Blue;
-                            Red[2, 2] = Color.Blue;
+                            Orange[2, 0] = blueCopy[2, 0];
+                            Orange[2, 1] = blueCopy[2, 1];
+                            Orange[2, 2] = blueCopy[2, 2];
 
-                            Green[2, 0] = Color.Red;
-                            Green[2, 1] = Color.Red;
-                            Green[2, 2] = Color.Red;
+                            Green[2, 0] = orangeCopy[2, 0];
+                            Green[2, 1] = orangeCopy[2, 1];
+                            Green[2, 2] = orangeCopy[2, 2];
 
-                            Orange[2, 0] = Color.Green;
-                            Orange[2, 1] = Color.Green;
-                            Orange[2, 2] = Color.Green;
+                            Red[2, 0] = greenCopy[2, 0];
+                            Red[2, 1] = greenCopy[2, 1];
+                            Red[2, 2] = greenCopy[2, 2];
+
+                            White[0, 0] = whiteCopy[0, 2];
+                            White[0, 1] = whiteCopy[1, 2];
+                            White[0, 2] = whiteCopy[2, 2];
+
+                            White[1, 2] = whiteCopy[2, 1];
+                            White[2, 2] = whiteCopy[2, 0];
+
+                            White[2, 1] = whiteCopy[1, 0];
+                            White[2, 0] = whiteCopy[0, 0];
+                            White[1, 0] = whiteCopy[0, 1];
                         }
 
                         break;
@@ -256,11 +278,61 @@ namespace RubixCubes.Core
                     case Turn.Front:
                         if (clockwise)
                         {
+                            Red[0, 0] = redCopy[2, 0];
+                            Red[1, 0] = redCopy[2, 1];
+                            Red[2, 0] = redCopy[2, 2];
 
+                            Red[2, 1] = redCopy[1, 2];
+                            Red[2, 2] = redCopy[0, 2];
+
+                            Red[1, 2] = redCopy[0, 1];
+                            Red[0, 2] = redCopy[0, 0];
+                            Red[0, 1] = redCopy[1, 0];
+
+                            Yellow[2, 0] = blueCopy[2, 2];
+                            Yellow[2, 1] = blueCopy[1, 2];
+                            Yellow[2, 2] = blueCopy[0, 2];
+
+                            Green[0, 0] = yellowCopy[2, 0];
+                            Green[1, 0] = yellowCopy[2, 1];
+                            Green[2, 0] = yellowCopy[2, 2];
+
+                            White[0, 0] = greenCopy[2, 0];
+                            White[0, 1] = greenCopy[1, 0];
+                            White[0, 2] = greenCopy[0, 0];
+
+                            Blue[0, 2] = whiteCopy[0, 0];
+                            Blue[1, 2] = whiteCopy[0, 1];
+                            Blue[2, 2] = whiteCopy[0, 2];
                         }
                         else
                         {
+                            Red[0, 0] = redCopy[0, 2];
+                            Red[0, 1] = redCopy[1, 2];
+                            Red[0, 2] = redCopy[2, 2];
 
+                            Red[1, 2] = redCopy[2, 1];
+                            Red[2, 2] = redCopy[2, 0];
+
+                            Red[2, 1] = redCopy[1, 0];
+                            Red[2, 0] = redCopy[0, 0];
+                            Red[1, 0] = redCopy[0, 1];
+
+                            Yellow[2, 0] = greenCopy[0, 0];
+                            Yellow[2, 1] = greenCopy[1, 0];
+                            Yellow[2, 2] = greenCopy[2, 0];
+
+                            Green[0, 0] = whiteCopy[0, 2];
+                            Green[1, 0] = whiteCopy[0, 1];
+                            Green[2, 0] = whiteCopy[0, 0];
+
+                            White[0, 0] = blueCopy[0, 2];
+                            White[0, 1] = blueCopy[1, 2];
+                            White[0, 2] = blueCopy[2, 2];
+
+                            Blue[0, 2] = yellowCopy[2, 2];
+                            Blue[1, 2] = yellowCopy[2, 1];
+                            Blue[2, 2] = yellowCopy[2, 0];
                         }
 
                         break;
@@ -268,11 +340,61 @@ namespace RubixCubes.Core
                     case Turn.Back:
                         if (clockwise)
                         {
+                            Orange[0, 0] = orangeCopy[2, 0];
+                            Orange[1, 0] = orangeCopy[2, 1];
+                            Orange[2, 0] = orangeCopy[2, 2];
 
+                            Orange[2, 1] = orangeCopy[1, 2];
+                            Orange[2, 2] = orangeCopy[0, 2];
+
+                            Orange[1, 2] = orangeCopy[0, 1];
+                            Orange[0, 2] = orangeCopy[0, 0];
+                            Orange[0, 1] = orangeCopy[1, 0];
+
+                            Yellow[0, 0] = greenCopy[0, 2];
+                            Yellow[0, 1] = greenCopy[1, 2];
+                            Yellow[0, 2] = greenCopy[2, 2];
+
+                            Blue[2, 0] = yellowCopy[0, 0];
+                            Blue[1, 0] = yellowCopy[0, 1];
+                            Blue[0, 0] = yellowCopy[0, 2];
+
+                            White[2, 2] = blueCopy[2, 0];
+                            White[2, 1] = blueCopy[1, 0];
+                            White[2, 0] = blueCopy[0, 0];
+
+                            Green[0, 2] = whiteCopy[2, 2];
+                            Green[1, 2] = whiteCopy[2, 1];
+                            Green[2, 2] = whiteCopy[2, 0];
                         }
                         else
                         {
+                            Orange[0, 0] = orangeCopy[0, 2];
+                            Orange[0, 1] = orangeCopy[1, 2];
+                            Orange[0, 2] = orangeCopy[2, 2];
 
+                            Orange[1, 2] = orangeCopy[2, 1];
+                            Orange[2, 2] = orangeCopy[2, 0];
+
+                            Orange[2, 1] = orangeCopy[1, 0];
+                            Orange[2, 0] = orangeCopy[0, 0];
+                            Orange[1, 0] = orangeCopy[0, 1];
+
+                            Yellow[0, 2] = blueCopy[0, 0];
+                            Yellow[0, 1] = blueCopy[1, 0];
+                            Yellow[0, 0] = blueCopy[2, 0];
+
+                            Green[0, 2] = yellowCopy[0, 0];
+                            Green[1, 2] = yellowCopy[0, 1];
+                            Green[2, 2] = yellowCopy[0, 2];
+
+                            White[2, 2] = greenCopy[0, 2];
+                            White[2, 1] = greenCopy[1, 2];
+                            White[2, 0] = greenCopy[2, 2];
+
+                            Blue[2, 0] = whiteCopy[2, 2];
+                            Blue[1, 0] = whiteCopy[2, 1];
+                            Blue[0, 0] = whiteCopy[2, 0];
                         }
 
                         break;
