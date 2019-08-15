@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace RubixCubes.Core.DTOs
 {
-    public class ScrumblerDto
+    public class ScramblerDto
     {
         public Cube Cube { get; set; }
-        public List<Tuple<Turn,bool, int>> Turns { get; set; }
+        public List<Tuple<TurnType, bool, int>> Turns { get; set; }
     }
 }

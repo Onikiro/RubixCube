@@ -9,14 +9,14 @@ namespace RubixCubes.Core
     {
         private readonly Random _random = new Random();
 
-        public ScrumblerDto ScrambleCube()
+        public ScramblerDto ScrambleCube(int countOfSteps = 25)
         {
             var cube = new Cube();
-            var turns = new List<Tuple<Turn, bool, int>>();
+            var turns = new List<Tuple<TurnType, bool, int>>();
             var i = 0;
-            while (i < 20)
+            while (i < countOfSteps)
             {
-                var direction = (Turn)_random.Next(0, 6);
+                var direction = (TurnType)_random.Next(0, 6);
                 var quantity = _random.Next(1, 3);
                 var forClockwise = _random.Next(0, 2);
                 var clockwise = forClockwise == 1 || quantity == 2;
@@ -29,9 +29,9 @@ namespace RubixCubes.Core
 
                 switch (direction)
                 {
-                    case Turn.Left:
+                    case TurnType.Left:
                         {
-                            if (turns[i - 1].Item1 != Turn.Left)
+                            if (turns[i - 1].Item1 != TurnType.Left)
                             {
                                 turns.Add(Tuple.Create(direction, clockwise, quantity));
                                 i++;
@@ -39,9 +39,9 @@ namespace RubixCubes.Core
 
                             break;
                         }
-                    case Turn.Right:
+                    case TurnType.Right:
                         {
-                            if (turns[i - 1].Item1 != Turn.Right)
+                            if (turns[i - 1].Item1 != TurnType.Right)
                             {
                                 turns.Add(Tuple.Create(direction, clockwise, quantity));
                                 i++;
@@ -49,9 +49,9 @@ namespace RubixCubes.Core
 
                             break;
                         }
-                    case Turn.Up:
+                    case TurnType.Up:
                         {
-                            if (turns[i - 1].Item1 != Turn.Up)
+                            if (turns[i - 1].Item1 != TurnType.Up)
                             {
                                 turns.Add(Tuple.Create(direction, clockwise, quantity));
                                 i++;
@@ -59,9 +59,9 @@ namespace RubixCubes.Core
 
                             break;
                         }
-                    case Turn.Down:
+                    case TurnType.Down:
                         {
-                            if (turns[i - 1].Item1 != Turn.Down)
+                            if (turns[i - 1].Item1 != TurnType.Down)
                             {
                                 turns.Add(Tuple.Create(direction, clockwise, quantity));
                                 i++;
@@ -69,9 +69,9 @@ namespace RubixCubes.Core
 
                             break;
                         }
-                    case Turn.Front:
+                    case TurnType.Front:
                         {
-                            if (turns[i - 1].Item1 != Turn.Front)
+                            if (turns[i - 1].Item1 != TurnType.Front)
                             {
                                 turns.Add(Tuple.Create(direction, clockwise, quantity));
                                 i++;
@@ -79,9 +79,9 @@ namespace RubixCubes.Core
 
                             break;
                         }
-                    case Turn.Back:
+                    case TurnType.Back:
                         {
-                            if (turns[i - 1].Item1 != Turn.Back)
+                            if (turns[i - 1].Item1 != TurnType.Back)
                             {
                                 turns.Add(Tuple.Create(direction, clockwise, quantity));
                                 i++;
@@ -97,10 +97,10 @@ namespace RubixCubes.Core
                 cube.Move(turn, clockwise, count);
             }
 
-            return new ScrumblerDto
+            return new ScramblerDto
             {
                 Cube = cube,
-                Turns = turns,
+                Turns = turns
             };
         }
     }

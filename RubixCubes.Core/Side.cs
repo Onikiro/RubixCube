@@ -8,7 +8,7 @@ namespace RubixCubes.Core
     public class Side : IEnumerable
     {
         private readonly Color _color;
-        public Turn Turn { get; set; }
+        public TurnType TurnType { get; set; }
 
         public bool IsSolved
         {
@@ -18,9 +18,9 @@ namespace RubixCubes.Core
             }
         }
 
-        public Side(Color color,Turn turn)
+        public Side(Color color, TurnType turnType)
         {
-            Turn = turn;
+            TurnType = turnType;
             _color = color;
             for (var i = 0; i < _sideMatrix.GetLength(0); i++)
             {
@@ -37,7 +37,7 @@ namespace RubixCubes.Core
 
         public Side Copy()
         {
-            var sideCopy = new Side(_color);
+            var sideCopy = new Side(_color, TurnType);
 
             for (var i = 0; i < _sideMatrix.GetLength(0); i++)
             {
@@ -54,20 +54,20 @@ namespace RubixCubes.Core
         {
             return _sideMatrix.GetEnumerator();
         }
-        public Tuple<Side, Color, int[,], Side, Color, int[,]> GetEdge(int[,])
+
+        public Tuple<Side, Color, int[,], Side, Color, int[,]> GetEdge(int[,] coordinates)
         {
-            switch (this)
-            {
-                case Up:
-                    {
-                        
-                        break;
-                    }
-            }
+            //switch (this)
+            //{
+            //    case Up:
+            //        {
+
+            //            break;
+            //        }
+            //}
             //var yellow_orange = new Tuple<Side, Color, int[,], Side, Color, int[,]>(Cube.Up, Cube.Up[0, 1],);
             //Cube.Up[0, 1] =
-            return;
-
+            return null;
         }
     }
 }

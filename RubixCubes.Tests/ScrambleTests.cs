@@ -1,7 +1,7 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using RubixCubes.Core;
 using RubixCubes.Core.Enums;
+using System;
 using Xunit;
 
 namespace RubixCubes.Tests
@@ -13,26 +13,26 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Front, false);
-            cube.Move(Turn.Back, false);
-            cube.Move(Turn.Up, false);
-            cube.Move(Turn.Right, false);
-            cube.Move(Turn.Back, false);
-            cube.Move(Turn.Right, false);
-            cube.Move(Turn.Left, false);
-            cube.Move(Turn.Up);
-            cube.Move(Turn.Down, false);
-            cube.Move(Turn.Back, true, 2);
-            cube.Move(Turn.Front, false);
-            cube.Move(Turn.Right, false);
-            cube.Move(Turn.Down, false);
-            cube.Move(Turn.Back, false);
-            cube.Move(Turn.Front);
-            cube.Move(Turn.Up);
-            cube.Move(Turn.Right, false);
-            cube.Move(Turn.Down, true, 2);
-            cube.Move(Turn.Back, false);
-            cube.Move(Turn.Down);
+            cube.Move(TurnType.Front, false);
+            cube.Move(TurnType.Back, false);
+            cube.Move(TurnType.Up, false);
+            cube.Move(TurnType.Right, false);
+            cube.Move(TurnType.Back, false);
+            cube.Move(TurnType.Right, false);
+            cube.Move(TurnType.Left, false);
+            cube.Move(TurnType.Up);
+            cube.Move(TurnType.Down, false);
+            cube.Move(TurnType.Back, true, 2);
+            cube.Move(TurnType.Front, false);
+            cube.Move(TurnType.Right, false);
+            cube.Move(TurnType.Down, false);
+            cube.Move(TurnType.Back, false);
+            cube.Move(TurnType.Front);
+            cube.Move(TurnType.Up);
+            cube.Move(TurnType.Right, false);
+            cube.Move(TurnType.Down, true, 2);
+            cube.Move(TurnType.Back, false);
+            cube.Move(TurnType.Down);
 
             cube.Left[0, 0].Should().Be(Color.Orange);
             cube.Left[0, 1].Should().Be(Color.Yellow);

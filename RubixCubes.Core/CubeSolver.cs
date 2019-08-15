@@ -1,5 +1,5 @@
-﻿using System;
-using RubixCubes.Core.Enums;
+﻿using RubixCubes.Core.Enums;
+using System;
 
 namespace RubixCubes.Core
 {
