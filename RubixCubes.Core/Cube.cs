@@ -1,5 +1,4 @@
 ﻿using RubixCubes.Core.Enums;
-using System.Collections;
 
 namespace RubixCubes.Core
 {
@@ -415,7 +414,7 @@ namespace RubixCubes.Core
 
                 switch (coordinate)
                 {
-                    case RotatingCoordinate.x:
+                    case RotatingCoordinate.X:
                         {
                             if (clockwise)
                             {
@@ -479,7 +478,7 @@ namespace RubixCubes.Core
                             break;
                         }
 
-                    case RotatingCoordinate.y:
+                    case RotatingCoordinate.Y:
                         {
                             if (clockwise)
                             {
@@ -543,7 +542,7 @@ namespace RubixCubes.Core
                             break;
                         }
 
-                    case RotatingCoordinate.z:
+                    case RotatingCoordinate.Z:
                         {
                             if (clockwise)
                             {
@@ -608,65 +607,6 @@ namespace RubixCubes.Core
                         }
                 }
             }
-        }
-    }
-
-    public class Side : IEnumerable
-    {
-        private readonly Color _color;
-
-        public bool IsSolved
-        {
-            get
-            {
-                var isSolved = true;
-                foreach (Color el in _sideMatrix)
-                {
-                    if (el != _color)
-                    {
-                        isSolved = false;
-                        break;
-                    }
-                }
-
-                return isSolved;
-            }
-        }
-
-        public Side(Color color)
-        {
-            _color = color;
-            for (int i = 0; i < _sideMatrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < _sideMatrix.GetLength(1); j++)
-                {
-                    _sideMatrix[i, j] = _color;
-                }
-            }
-        }
-
-        private readonly Color[,] _sideMatrix = new Color[3, 3];
-
-        public Color this[int column, int row] { get => _sideMatrix[column, row]; set => _sideMatrix[column, row] = value; }
-
-        public Side Copy()
-        {
-            var sideCopy = new Side(_color);
-
-            for (int i = 0; i < _sideMatrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < _sideMatrix.GetLength(1); j++)
-                {
-                    sideCopy[i, j] = _sideMatrix[i, j];
-                }
-            }
-
-            return sideCopy;
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return _sideMatrix.GetEnumerator();
         }
     }
 }

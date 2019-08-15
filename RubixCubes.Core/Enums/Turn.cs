@@ -16,8 +16,8 @@ namespace RubixCubes.Core.Enums
     [Flags]
     public enum RotatingCoordinate
     {
-        x,
-        y,
-        z
+        X,
+        Y,
+        Z
     }
 }

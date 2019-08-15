@@ -4,19 +4,12 @@ using System;
 
 namespace RubixCubes.Console
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
-            //var scrumbler = new Scrumbler();
-            //var result = scrumbler.ScrumbleCube();
             var cube = new Cube();
-            cube.Rotate(RotatingCoordinate.z);
-
-            //foreach (var (turn, clockwise, count) in result.Turns)
-            //{
-            //    System.Console.Write(turn.Ltr() + "" + (clockwise == false ? "'" : "") + "" + count + "  ");
-            //}
+            cube.Rotate(RotatingCoordinate.Z);
 
             System.Console.WriteLine();
             System.Console.WriteLine($"\t{cube.Up[0, 0].Ltr()} {cube.Up[0, 1].Ltr()} {cube.Up[0, 2].Ltr()}");
@@ -37,7 +30,7 @@ namespace RubixCubes.Console
         }
     }
 
-    static class EnumExtensions
+    internal static class EnumExtensions
     {
         public static char Ltr(this Enum enumObj)
         {

@@ -1,4 +1,5 @@
-﻿using RubixCubes.Core.Enums;
+﻿using System;
+using RubixCubes.Core.Enums;
 
 namespace RubixCubes.Core
 {
@@ -6,11 +7,15 @@ namespace RubixCubes.Core
     {
         public void SolveCube()
         {
-            var scrumbler = new Scrumbler();
-            var dto = scrumbler.ScrumbleCube();
+            var scrambler = new Scrambler();
+            var dto = scrambler.ScrambleCube();
             var cube = dto.Cube;
 
-            while (cube.Down[0, 1] != Color.White && cube.Down[1, 0] != Color.White && cube.Down[1, 2] != Color.White && cube.Down[2, 1] != Color.White)
+            cube.Rotate(RotatingCoordinate.Y, false);
+
+            var bwEdge = new ValueTuple<int, int>(-1, -1);
+
+            while (bwEdge.Item1 == -1 && bwEdge.Item2 == -1)
             {
 
             }

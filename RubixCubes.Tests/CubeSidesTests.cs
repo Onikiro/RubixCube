@@ -8,7 +8,7 @@ namespace RubixCubes.Tests
     public class CubeSidesTests
     {
         [Fact]
-        public void InitializatingCube_ShouldReturnSolvedCube()
+        public void InitializationCube_ShouldReturnSolvedCube()
         {
             var cube = new Cube();
 
@@ -49,7 +49,7 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Left, false, 1);
+            cube.Move(Turn.Left, false);
 
             cube.Front[0, 0].Should().Be(Color.White);
             cube.Front[1, 0].Should().Be(Color.White);
@@ -97,7 +97,7 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Right, false, 1);
+            cube.Move(Turn.Right, false);
 
             cube.Front[0, 2].Should().Be(Color.Yellow);
             cube.Front[1, 2].Should().Be(Color.Yellow);
@@ -145,7 +145,7 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Up, false, 1);
+            cube.Move(Turn.Up, false);
 
             cube.Front[0, 0].Should().Be(Color.Blue);
             cube.Front[0, 1].Should().Be(Color.Blue);
@@ -193,7 +193,7 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Down, false, 1);
+            cube.Move(Turn.Down, false);
 
             cube.Front[2, 0].Should().Be(Color.Green);
             cube.Front[2, 1].Should().Be(Color.Green);
@@ -241,7 +241,7 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Front, false, 1);
+            cube.Move(Turn.Front, false);
 
             cube.Up[2, 0].Should().Be(Color.Green);
             cube.Up[2, 1].Should().Be(Color.Green);
@@ -289,7 +289,7 @@ namespace RubixCubes.Tests
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Back, false, 1);
+            cube.Move(Turn.Back, false);
 
             cube.Up[0, 2].Should().Be(Color.Blue);
             cube.Up[0, 1].Should().Be(Color.Blue);

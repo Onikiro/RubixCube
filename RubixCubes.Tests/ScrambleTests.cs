@@ -1,36 +1,37 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using RubixCubes.Core;
 using RubixCubes.Core.Enums;
 using Xunit;
 
 namespace RubixCubes.Tests
 {
-    public class ScrumbleTests
+    public class ScrambleTests
     {
         [Fact]
-        public void SpecifiedScrumble_ShouldReturnCorrectScrumbledCube()
+        public void SpecifiedScramble_ShouldReturnCorrectScrambledCube()
         {
             var cube = new Cube();
 
-            cube.Move(Turn.Front, false, 1);
-            cube.Move(Turn.Back, false, 1);
-            cube.Move(Turn.Up, false, 1);
-            cube.Move(Turn.Right, false, 1);
-            cube.Move(Turn.Back, false, 1);
-            cube.Move(Turn.Right, false, 1);
-            cube.Move(Turn.Left, false, 1);
+            cube.Move(Turn.Front, false);
+            cube.Move(Turn.Back, false);
+            cube.Move(Turn.Up, false);
+            cube.Move(Turn.Right, false);
+            cube.Move(Turn.Back, false);
+            cube.Move(Turn.Right, false);
+            cube.Move(Turn.Left, false);
             cube.Move(Turn.Up);
-            cube.Move(Turn.Down, false, 1);
+            cube.Move(Turn.Down, false);
             cube.Move(Turn.Back, true, 2);
-            cube.Move(Turn.Front, false, 1);
-            cube.Move(Turn.Right, false, 1);
-            cube.Move(Turn.Down, false, 1);
-            cube.Move(Turn.Back, false, 1);
+            cube.Move(Turn.Front, false);
+            cube.Move(Turn.Right, false);
+            cube.Move(Turn.Down, false);
+            cube.Move(Turn.Back, false);
             cube.Move(Turn.Front);
             cube.Move(Turn.Up);
-            cube.Move(Turn.Right, false, 1);
+            cube.Move(Turn.Right, false);
             cube.Move(Turn.Down, true, 2);
-            cube.Move(Turn.Back, false, 1);
+            cube.Move(Turn.Back, false);
             cube.Move(Turn.Down);
 
             cube.Left[0, 0].Should().Be(Color.Orange);
@@ -64,14 +65,14 @@ namespace RubixCubes.Tests
             cube.Front[2, 2].Should().Be(Color.Red);
         }
         [Fact]
-        public void Scrumbler_ShouldReturnUnsolvedCube()
+        public void Scrambler_ShouldReturnUnsolvedCube()
         {
             var cube = new Cube();
-            var scrumbler = new Scrumbler();
-            var result = scrumbler.ScrumbleCube();
-            foreach (var el in result.Turns)
+            var scrambler = new Scrambler();
+            var result = scrambler.ScrambleCube();
+            foreach (var (turn, clockwise, count) in result.Turns)
             {
-                cube.Move(el.Item1, el.Item2, el.Item3);
+                cube.Move(turn, clockwise, count);
             }
 
             cube.Left.Should().BeEquivalentTo(result.Cube.Left);

@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace RubixCubes.Core
 {
-    public class Scrumbler
+    public class Scrambler
     {
         private readonly Random _random = new Random();
 
-        public ScrumblerDto ScrumbleCube()
+        public ScrumblerDto ScrambleCube()
         {
             var cube = new Cube();
             var turns = new List<Tuple<Turn, bool, int>>();
