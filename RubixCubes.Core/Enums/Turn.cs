@@ -12,4 +12,12 @@ namespace RubixCubes.Core.Enums
         Front,
         Back
     }
+
+    [Flags]
+    public enum RotatingCoordinate
+    {
+        x,
+        y,
+        z
+    }
 }

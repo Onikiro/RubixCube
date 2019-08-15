@@ -94,7 +94,7 @@ namespace RubixCubes.Core
 
             foreach (var (turn, clockwise, count) in turns)
             {
-                cube.Rotate(turn, clockwise, count);
+                cube.Move(turn, clockwise, count);
             }
 
             return new ScrumblerDto
