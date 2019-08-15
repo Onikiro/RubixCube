@@ -7,28 +7,8 @@ namespace RubixCubes.Console
     {
         static void Main()
         {
-            var cube = new Cube();
-
-            cube.Rotate(Turn.Front, false, 1);
-            cube.Rotate(Turn.Down, false, 1);
-            cube.Rotate(Turn.Front, true, 2);
-            cube.Rotate(Turn.Back, false, 1);
-            cube.Rotate(Turn.Down, false, 1);
-            cube.Rotate(Turn.Up);
-            cube.Rotate(Turn.Front, true, 2);
-            cube.Rotate(Turn.Down);
-            cube.Rotate(Turn.Up, true, 2);
-            cube.Rotate(Turn.Left, true, 2);
-            cube.Rotate(Turn.Down, false, 1);
-            cube.Rotate(Turn.Up, true, 2);
-            cube.Rotate(Turn.Back, false, 1);
-            cube.Rotate(Turn.Up, true, 2);
-            cube.Rotate(Turn.Front, true, 2);
-            cube.Rotate(Turn.Back, false, 1);
-            cube.Rotate(Turn.Right);
-            cube.Rotate(Turn.Front, false, 1);
-            cube.Rotate(Turn.Down);
-            cube.Rotate(Turn.Front, true, 2);
+            var Result = Scrumbler.ScrumbleCube();
+            var cube = Result.Cube;
 
             System.Console.WriteLine($"\t{cube.Yellow[0, 0].Ltr()} {cube.Yellow[0, 1].Ltr()} {cube.Yellow[0, 2].Ltr()}");
             System.Console.WriteLine($"\t{cube.Yellow[1, 0].Ltr()} {cube.Yellow[1, 1].Ltr()} {cube.Yellow[1, 2].Ltr()}");

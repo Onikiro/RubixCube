@@ -1,19 +1,24 @@
-﻿namespace RubixCubes.Core
-{
+﻿using RubixCubes.Core.DTOs;
+using RubixCubes.Core.Enums;
+using System;
+using System.Collections.Generic;
+
+namespace RubixCubes.Core
+{   
     public static class Scrumbler
     {
-        public static Cube ScrumbleCube()
+        public static ScrumblerDto ScrumbleCube()
         {
             var cube = new Cube();
-            var cubeIsSolved = true;
+            List<Tuple<Turn,int>> Turns = new List<Tuple<Turn,int>>();
 
-            do
+            
+
+            return new ScrumblerDto
             {
-
-            }
-            while (!cubeIsSolved);
-
-            return cube;
+                Cube = cube,
+                Turns = Turns,
+            };
         }
     }
 }
