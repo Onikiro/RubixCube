@@ -1,4 +1,5 @@
 ﻿using RubixCubes.Core.Enums;
+using System;
 using System.Collections;
 using System.Linq;
 
@@ -7,6 +8,7 @@ namespace RubixCubes.Core
     public class Side : IEnumerable
     {
         private readonly Color _color;
+        public Turn Turn { get; set; }
 
         public bool IsSolved
         {
@@ -16,8 +18,9 @@ namespace RubixCubes.Core
             }
         }
 
-        public Side(Color color)
+        public Side(Color color,Turn turn)
         {
+            Turn = turn;
             _color = color;
             for (var i = 0; i < _sideMatrix.GetLength(0); i++)
             {
@@ -50,6 +53,21 @@ namespace RubixCubes.Core
         public IEnumerator GetEnumerator()
         {
             return _sideMatrix.GetEnumerator();
+        }
+        public Tuple<Side, Color, int[,], Side, Color, int[,]> GetEdge(int[,])
+        {
+            switch (this)
+            {
+                case Up:
+                    {
+                        
+                        break;
+                    }
+            }
+            //var yellow_orange = new Tuple<Side, Color, int[,], Side, Color, int[,]>(Cube.Up, Cube.Up[0, 1],);
+            //Cube.Up[0, 1] =
+            return;
+
         }
     }
 }

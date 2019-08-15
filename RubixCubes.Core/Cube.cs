@@ -4,12 +4,12 @@ namespace RubixCubes.Core
 {
     public class Cube
     {
-        public Side Right { get; private set; } = new Side(Color.Green);
-        public Side Front { get; private set; } = new Side(Color.Red);
-        public Side Down { get; private set; } = new Side(Color.White);
-        public Side Left { get; private set; } = new Side(Color.Blue);
-        public Side Up { get; private set; } = new Side(Color.Yellow);
-        public Side Back { get; private set; } = new Side(Color.Orange);
+        public Side Right { get; private set; } = new Side(Color.Green,Turn.Right);
+        public Side Front { get; private set; } = new Side(Color.Red, Turn.Front);
+        public Side Down { get; private set; } = new Side(Color.White, Turn.Down);
+        public Side Left { get; private set; } = new Side(Color.Blue, Turn.Left);
+        public Side Up { get; private set; } = new Side(Color.Yellow, Turn.Up);
+        public Side Back { get; private set; } = new Side(Color.Orange, Turn.Back);
 
         public bool IsSolved => Right.IsSolved && Front.IsSolved && Down.IsSolved && Left.IsSolved && Up.IsSolved && Back.IsSolved;
 
@@ -419,9 +419,13 @@ namespace RubixCubes.Core
                             if (clockwise)
                             {
                                 Front = downCopy;
+                                Front.Turn = downCopy.Turn;
                                 Down = backCopy;
+                                Down.Turn = backCopy.Turn;
                                 Back = upCopy;
+                                Back.Turn = upCopy.Turn;
                                 Up = frontCopy;
+                                Up.Turn = frontCopy.Turn;
 
                                 Right[0, 0] = rightCopy[0, 2];
                                 Right[0, 1] = rightCopy[1, 2];
@@ -448,9 +452,13 @@ namespace RubixCubes.Core
                             else
                             {
                                 Front = upCopy;
+                                Front.Turn = upCopy.Turn;
                                 Up = backCopy;
+                                Up.Turn = backCopy.Turn;
                                 Back = downCopy;
+                                Back.Turn = downCopy.Turn;
                                 Down = frontCopy;
+                                Down.Turn = frontCopy.Turn;
 
                                 Right[0, 0] = rightCopy[2, 0];
                                 Right[1, 0] = rightCopy[2, 1];
@@ -483,9 +491,13 @@ namespace RubixCubes.Core
                             if (clockwise)
                             {
                                 Front = rightCopy;
+                                Front.Turn = rightCopy.Turn;
                                 Right = backCopy;
+                                Right.Turn = backCopy.Turn;
                                 Left = frontCopy;
+                                Left.Turn = frontCopy.Turn;
                                 Back = leftCopy;
+                                Back.Turn = leftCopy.Turn;
 
                                 Up[0, 0] = upCopy[0, 2];
                                 Up[0, 1] = upCopy[1, 2];
@@ -512,9 +524,13 @@ namespace RubixCubes.Core
                             else
                             {
                                 Front = leftCopy;
+                                Front.Turn = leftCopy.Turn;
                                 Right = frontCopy;
+                                Right.Turn = frontCopy.Turn;
                                 Back = rightCopy;
+                                Back.Turn = rightCopy.Turn;
                                 Left = backCopy;
+                                Left.Turn = backCopy.Turn;
 
                                 Up[0, 0] = upCopy[2, 0];
                                 Up[1, 0] = upCopy[2, 1];
@@ -547,9 +563,13 @@ namespace RubixCubes.Core
                             if (clockwise)
                             {
                                 Left = downCopy;
+                                Left.Turn = downCopy.Turn;
                                 Down = rightCopy;
+                                Down.Turn = rightCopy.Turn;
                                 Right = upCopy;
+                                Right.Turn = upCopy.Turn;
                                 Up = leftCopy;
+                                Up.Turn = leftCopy.Turn;
 
                                 Front[0, 0] = frontCopy[2, 0];
                                 Front[1, 0] = frontCopy[2, 1];
@@ -576,9 +596,13 @@ namespace RubixCubes.Core
                             else
                             {
                                 Left = upCopy;
+                                Left.Turn = upCopy.Turn;
                                 Up = rightCopy;
+                                Up.Turn = rightCopy.Turn;
                                 Right = downCopy;
+                                Right.Turn = downCopy.Turn;
                                 Down = leftCopy;
+                                Down.Turn = leftCopy.Turn;
 
                                 Front[0, 0] = frontCopy[0, 2];
                                 Front[0, 1] = frontCopy[1, 2];
