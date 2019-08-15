@@ -1,9 +1,6 @@
-﻿using System;
-
-namespace RubixCubes.Core.Enums
+﻿namespace RubixCubes.Core.Enums
 {
-    [Flags]
-    public enum Turn
+    public enum TurnType
     {
         Left,
         Right,
