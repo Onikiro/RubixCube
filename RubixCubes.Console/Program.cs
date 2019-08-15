@@ -1,5 +1,4 @@
-﻿using RubixCubes.Core.Enums;
-using RubixCubes.Core;
+﻿using RubixCubes.Core;
 using System;
 
 namespace RubixCubes.Console
@@ -8,13 +7,15 @@ namespace RubixCubes.Console
     {
         static void Main()
         {
-            var Result = Scrumbler.ScrumbleCube();
-            var cube = Result.Cube;
+            var scrumbler = new Scrumbler();
+            var result = scrumbler.ScrumbleCube();
+            var cube = result.Cube;
 
-            foreach (var el in Result.Turns)
+            foreach (var (turn, clockwise, count) in result.Turns)
             {
-                System.Console.Write(el.Item1.Ltr() + "" + (el.Item2 == false ? "'" : "") + "" + el.Item3 + ",");
+                System.Console.Write(turn.Ltr() + "" + (clockwise == false ? "'" : "") + "" + count + "  ");
             }
+
             System.Console.WriteLine();
             System.Console.WriteLine($"\t{cube.Yellow[0, 0].Ltr()} {cube.Yellow[0, 1].Ltr()} {cube.Yellow[0, 2].Ltr()}");
             System.Console.WriteLine($"\t{cube.Yellow[1, 0].Ltr()} {cube.Yellow[1, 1].Ltr()} {cube.Yellow[1, 2].Ltr()}");
@@ -36,13 +37,9 @@ namespace RubixCubes.Console
 
     static class EnumExtensions
     {
-        public static char Ltr(this Color color)
+        public static char Ltr(this Enum enumObj)
         {
-            return color.ToString()[0];
-        }
-        public static char Ltr(this Turn color)
-        {
-            return color.ToString()[0];
+            return enumObj.ToString()[0];
         }
     }
 }
