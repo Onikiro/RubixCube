@@ -63,5 +63,22 @@ namespace RubixCubes.Tests
             cube.Red[2, 1].Should().Be(Color.Yellow);
             cube.Red[2, 2].Should().Be(Color.Red);
         } 
+        [Fact]
+        public void Scrumbler_ShouldReturnUnsolvedCube()
+        {
+            var cube = new Cube();
+            var Result = Scrumbler.ScrumbleCube();
+            foreach (var el in Result.Turns)
+            {
+                cube.Rotate(el.Item1, el.Item2, el.Item3);
+            }
+
+            cube.Blue.Should().BeEquivalentTo(Result.Cube.Blue);
+            cube.Red.Should().BeEquivalentTo(Result.Cube.Red);
+            cube.Yellow.Should().BeEquivalentTo(Result.Cube.Yellow);
+            cube.Green.Should().BeEquivalentTo(Result.Cube.Green);
+            cube.White.Should().BeEquivalentTo(Result.Cube.White);
+            cube.Orange.Should().BeEquivalentTo(Result.Cube.Orange);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using RubixCubes.Core.Enums;
 using RubixCubes.Core;
+using System;
 
 namespace RubixCubes.Console
 {
@@ -10,6 +11,11 @@ namespace RubixCubes.Console
             var Result = Scrumbler.ScrumbleCube();
             var cube = Result.Cube;
 
+            foreach (var el in Result.Turns)
+            {
+                System.Console.Write(el.Item1.Ltr() + "" + (el.Item2 == false ? "'" : "") + "" + el.Item3 + ",");
+            }
+            System.Console.WriteLine();
             System.Console.WriteLine($"\t{cube.Yellow[0, 0].Ltr()} {cube.Yellow[0, 1].Ltr()} {cube.Yellow[0, 2].Ltr()}");
             System.Console.WriteLine($"\t{cube.Yellow[1, 0].Ltr()} {cube.Yellow[1, 1].Ltr()} {cube.Yellow[1, 2].Ltr()}");
             System.Console.WriteLine($"\t{cube.Yellow[2, 0].Ltr()} {cube.Yellow[2, 1].Ltr()} {cube.Yellow[2, 2].Ltr()}");
@@ -31,6 +37,10 @@ namespace RubixCubes.Console
     static class EnumExtensions
     {
         public static char Ltr(this Color color)
+        {
+            return color.ToString()[0];
+        }
+        public static char Ltr(this Turn color)
         {
             return color.ToString()[0];
         }

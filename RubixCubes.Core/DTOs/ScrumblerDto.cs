@@ -7,6 +7,6 @@ namespace RubixCubes.Core.DTOs
     public class ScrumblerDto
     {
         public Cube Cube { get; set; }
-        public List<Tuple<Turn, int>> Turns { get; set; }
+        public List<Tuple<Turn,bool, int>> Turns { get; set; }
     }
 }
